@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.users-container, .posts-container, .comments-container {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+}
+
+.user-box {
+    width: 400px;
+    border: 1px solid black;
+    font-size: 10px;
+    margin: 5px;
+    padding: 5px;
+    text-align: initial;
+}
+
+.address-block {
+    border: 1px solid black;
+}
+
+.geo-block {
+    border: 1px solid black;
+}
+
+.company-block {
+    border: 1px solid black;
+}
+
+.post-box, .comment-box {
+    width: 200px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+.post-box > div , .comment-box >div{
+    font-size: 9px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
