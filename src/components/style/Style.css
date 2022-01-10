@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.users-container {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+}
+
+.block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.user-box {
+    width: 400px;
+    font-size: 10px;
+    margin: 5px;
+    padding: 5px;
+    text-align: initial;
+}
+
+.user-box div {
+    padding: 5px;
+}
+
+.post-box, .comment-box {
+    width: 200px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+.post-box > div, .comment-box > div {
+    font-size: 6px;
+    margin: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
