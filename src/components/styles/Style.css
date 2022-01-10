@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.user-container {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+}
+
+.user-box {
+    width: 400px;
+    border: 1px solid black;
+    font-size: 10px;
+    margin: 5px;
+    padding: 5px;
+    text-align: initial;
+}
+
+.address-block {
+    border: 1px solid black;
+}
+
+.geo-block {
+    border: 1px solid black;
+}
+
+.company-block {
+    border: 1px solid black;
+}
