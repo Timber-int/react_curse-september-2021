@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mission-container {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.mission-box {
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+    justify-content: center;
+}
+
+.mission-exercise {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.mission-exercise > div {
+    width: 100%;
+    position: center;
+}
+
+.mission-logo {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mission-logo > img {
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+}
