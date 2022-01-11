@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.items-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.post-info {
+    border: 1px solid black;
+    width: 300px;
+    text-align: center;
+
+}
+
+.posts-container {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.comments-container {
+    width: 300px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.post-box, .comment-box, .chosen_post-box {
+    border: 1px solid black;
+    margin: 2px;
+    padding: 2px;
+    font-size: 10px;
+}
+
+.post-box{
+    width: 45%;
+}
+
+.post-box {
+    font-size: 8px;
+    text-align: center;
+}
+
+.post-box > div > button {
+    width: 40%;
+    margin: 5px;
+    font-size: 8px;
+    cursor: pointer;
+}
+
+.post-box > div > button:hover {
+    background: black;
+    color: white;
+}
