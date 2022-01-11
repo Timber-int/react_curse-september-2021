@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.users-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+}
+
+.users-container {
+    border: 1px solid black;
+    width: 50%;
+}
+
+.posts-container {
+    border: 1px solid black;
+    width: 50%;
+}
+
+.user-box, .post-box {
+    border: 1px solid black;
+    font-size: 10px;
+
+}
+
+.user-box > div, .post-box > div {
+    border: 1px solid black;
+    margin: 1px;
+}
