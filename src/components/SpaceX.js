@@ -15,7 +15,7 @@ const SpaceX = () => {
         <div>
             <div className="mission-container">
                 {
-                    mission.filter(mission => mission.launch_year != 2020)
+                    mission.filter(mission => mission.launch_year < 2020)
                         .map(mission =>
                             <SpaceXComponent key={mission.launch_date_local + mission.flight_number} mission={mission}/>
                         )
