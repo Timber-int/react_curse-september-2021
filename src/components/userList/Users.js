@@ -17,7 +17,7 @@ const Users = () => {
 
     useEffect(() => {
         getUsers().then(value => setUsers([...value.data]));
-    }, [users]);
+    }, []);
 
     const getAllPostsOfUser = (id) => {
         getPostsOfUser(id).then(value => setPosts([...value.data]));
