@@ -7,21 +7,19 @@ const FilePosts = () => {
 
     const [posts, setPosts] = useState([]);
 
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     const [currentPage, setCurrentPage] = useState(1);
 
     const [postsPerPage, setPostsPerPage] = useState(10);
 
     useEffect(() => {
-        setIsLoading(true);
         const fetchPosts = () => {
             setTimeout(() => {
                 getPosts().then(value => setPosts([...value.data]));
-            }, 4000);
-            setIsLoading(false);
+                setIsLoading(false);
+            }, 2000);
         }
-
         fetchPosts();
     }, [posts]);
 
@@ -36,9 +34,18 @@ const FilePosts = () => {
             {
                 isLoading === true
                     ? <center><h3>Loading...</h3></center>
-                    : <Posts posts={currentPost}/>
+                    : <div>
+                        <center><h3>Posts list</h3></center>
+                        <Posts
+                            posts={currentPost}
+                        />
+                        <Pagination
+                            totalPage={posts.length}
+                            postsPerPage={postsPerPage}
+                            startPagination={startPagination}
+                        />
+                    </div>
             }
-            <Pagination totalPage={posts.length} postsPerPage={postsPerPage} startPagination={startPagination}/>
         </div>
     );
 }

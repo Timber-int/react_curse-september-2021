@@ -1,3 +1,6 @@
+import '../styles/styles.css';
+
+
 const Post = ({post: {title, body, id}}) => {
     return (
         <div className="post-box">

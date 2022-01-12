@@ -1,3 +1,6 @@
+import '../styles/styles.css';
+
+
 const Pagination = ({totalPage, postsPerPage, startPagination}) => {
     const numberPostsArray = []
     for (let i = 1; i < Math.ceil(totalPage / postsPerPage); i++) {
@@ -7,7 +10,12 @@ const Pagination = ({totalPage, postsPerPage, startPagination}) => {
         <div className="button-container">
             {
                 numberPostsArray.map(number => (
-                    <button key={number} onClick={() => startPagination(number)}>{number}</button>
+                    <button
+                        className="number-button"
+                        key={number}
+                        onClick={() => startPagination(number)}
+                    >{number}
+                    </button>
                 ))
             }
 

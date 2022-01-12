@@ -1,0 +1,57 @@
+.posts-container {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+    background: lightgreen;
+}
+
+.post-box {
+    width: 200px;
+    height: 120px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    background: lightskyblue;
+}
+
+.post-box > div {
+    font-size: 9px;
+    margin: 5px;
+    border: 1px solid black;
+    padding: 1px;
+    text-align: center;
+    background: white;
+    height: 25px;
+}
+
+.post-box > div:last-child {
+    height: 70px;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.number-button {
+    margin: 5px;
+    border: 1px solid lightskyblue;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 100%;
+    cursor: pointer;
+    background: white;
+
+}
+
+.number-button:hover {
+    box-shadow: 0 0 0 5px lightgreen;
+}
