@@ -9,7 +9,7 @@ export default function Comments() {
 
     useEffect(() => {
         getComments().then(value => setComments([...value.data]));
-    }, [comments]);
+    }, []);
 
     return (
             <div className="comments-container">
