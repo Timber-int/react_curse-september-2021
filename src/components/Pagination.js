@@ -3,7 +3,7 @@ import '../styles/styles.css';
 
 const Pagination = ({totalPage, postsPerPage, startPagination}) => {
     const numberPostsArray = []
-    for (let i = 1; i < Math.ceil(totalPage / postsPerPage); i++) {
+    for (let i = 1; i < Math.ceil(totalPage / postsPerPage)+1; i++) {
         numberPostsArray.push(i);
     }
     return (

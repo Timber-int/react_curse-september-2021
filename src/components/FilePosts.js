@@ -21,7 +21,7 @@ const FilePosts = () => {
             }, 2000);
         }
         fetchPosts();
-    }, [posts]);
+    }, );
 
     const indexLastPost = currentPage * postsPerPage;
     const indexFirstPost = indexLastPost - postsPerPage;
@@ -35,7 +35,7 @@ const FilePosts = () => {
                 isLoading === true
                     ? <center><h3>Loading...</h3></center>
                     : <div>
-                        <center><h3>Posts list</h3></center>
+                        <center><h3>Posts information</h3></center>
                         <Posts
                             posts={currentPost}
                         />
