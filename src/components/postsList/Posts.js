@@ -21,7 +21,7 @@ const Posts = () => {
 
     useEffect(() => {
         getPosts().then(value => setPosts([...value.data]));
-    }, [posts]);
+    }, []);
 
     const getMoreInfoPost = (id) => {
         getPost(id).then(value => setChosenPost({...value.data}));
