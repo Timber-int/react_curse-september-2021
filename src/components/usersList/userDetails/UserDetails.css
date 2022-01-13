@@ -1,0 +1,24 @@
+.user_details-box > div > div {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+.details_button {
+    margin: 5px;
+    border: 1px solid lightskyblue;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+    font-size: 10px;
+    width: 435px;
+    border-radius: 5px;
+    position: center;
+}
+
+.details_button:hover {
+    box-shadow: 0 0 0 5px lightgreen;
+}

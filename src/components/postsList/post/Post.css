@@ -1,0 +1,13 @@
+.post-box {
+    width: 200px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    font-size: 10px;
+    text-align: justify;
+}
+
+.post-box > div {
+    margin: 5px;
+}

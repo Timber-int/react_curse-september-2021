@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
 
 
-import User from "./User";
-import {getPostsOfUser, getUser, getUsers} from "../../service/api.service";
-import UserDetails from "./UserDetails";
-import Posts from "../postsList/Posts";
-import "../styles/Style.css";
+import User from "../user/User";
+import {getPostsOfUser, getUser, getUsers} from "../../../service/api.service";
+import UserDetails from "../userDetails/UserDetails";
+import Posts from "../../postsList/posts/Posts";
+import "./Users.css";
 
 const Users = () => {
 

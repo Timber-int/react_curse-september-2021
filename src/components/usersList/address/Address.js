@@ -1,6 +1,6 @@
-import Geo from "./Geo";
-import "../styles/Style.css";
+import Geo from "../geo/Geo";
 
+import "./Address.css";
 
 export default function Address({address: {street, suite, city, zipcode, geo}}) {
     return (

@@ -3,8 +3,6 @@ import {baseUrl} from "../config/urls";
 
 const axiosInstance = axios.create({
     baseURL: baseUrl,
-    headers: '',
-    params: '',
 });
 
 const getUsers = () => {

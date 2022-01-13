@@ -1,9 +1,8 @@
 import React from 'react';
 
-import Address from "./Address";
-import Company from "./Company";
-import "../styles/Style.css";
-
+import Address from "../address/Address";
+import Company from "../company/Company";
+import "./UserDetails.css";
 
 const UserDetails = (
     {

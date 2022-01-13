@@ -1,4 +1,4 @@
-import "../styles/Style.css";
+import "./Geo.css";
 
 
 export default function Geo({geo: {lat, lng}}) {

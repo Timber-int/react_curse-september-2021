@@ -1,4 +1,4 @@
-import "../styles/Style.css";
+import "./Company.css";
 
 
 export default function Company({company: {name, catchPhrase, bs}}) {

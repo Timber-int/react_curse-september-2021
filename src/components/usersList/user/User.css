@@ -1,0 +1,32 @@
+.user-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 5px;
+    width: 45%;
+}
+
+.user-box > div {
+    font-size: 10px;
+    width: 100%;
+    margin: 5px;
+}
+
+.user-box > button{
+    margin: 5px;
+    border: 1px solid lightskyblue;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+    background: white;
+    font-size: 10px;
+}
+.user-box > button:hover{
+    box-shadow: 0 0 0 5px lightgreen;
+}

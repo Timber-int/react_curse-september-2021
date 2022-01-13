@@ -1,7 +1,6 @@
 import React from 'react';
 
-import "../styles/Style.css";
-
+import "./User.css";
 
 const User = ({user: {id, name}, getUserDetails}) => {
 
