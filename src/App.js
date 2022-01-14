@@ -17,7 +17,7 @@ function App() {
         // console.log(form);
        const newUsers=[];
         users.filter(user => {
-            if(user.name.includes(form.name) || user.username.includes(form.userName) || user.email.includes(form.email)){
+            if(user.name.includes(form.name) && user.username.includes(form.userName) && user.email.includes(form.email)){
                 newUsers.push(user);
             }
         });
