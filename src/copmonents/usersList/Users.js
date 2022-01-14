@@ -1,5 +1,7 @@
 import React from 'react';
+
 import User from "./user/User";
+import "./Users.css";
 
 const Users = ({users}) => {
     return (
