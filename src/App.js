@@ -14,15 +14,17 @@ function App() {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        console.log(form);
-        users.forEach(user => {
-            console.log(user)
-            if (user.name.includes(form.name) || user.username.includes(form.userName) || user.email.includes(form.email)) {
-                setUsers([...users,{...user}])
+        // console.log(form);
+       const newUsers=[];
+        users.filter(user => {
+            if(user.name.includes(form.name) || user.username.includes(form.userName) || user.email.includes(form.email)){
+                newUsers.push(user);
             }
         });
+        // console.log(newUsers);
+        setUsers(newUsers);
     }
-    console.log(users);
+    // console.log(users);
 
     const formHandler = (e) => {
         console.log(e.target.name);
