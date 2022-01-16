@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
 
+import axios from "axios";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 import "./Trending.css";
@@ -27,7 +27,7 @@ const Trending = () => {
 
             <div className="trending">
                 {
-                    content && content.map(movie => <SingleContent key={movie.id} movie={movie}/>)
+                    content && content.map(movie => <SingleContent key={movie.id} movie={movie} media_type={movie.media_type}/>)
                 }
             </div>
 

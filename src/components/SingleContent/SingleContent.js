@@ -3,6 +3,7 @@ import React from 'react';
 import {img_300, unavailable} from "../../config/config";
 import "./SingleContent.css";
 import {Badge} from "@material-ui/core";
+import ContentModal from "../ContentModel/ContentModel";
 
 const SingleContent = (
     {
@@ -13,13 +14,14 @@ const SingleContent = (
             name,
             first_air_date,
             release_date,
-            media_type,
             vote_average
-        }
+        },
+        media_type,
     }
     ) => {
+
         return (
-            <div className="media">
+            <ContentModal media_type={media_type} id={id}>
                 <Badge
                     badgeContent={vote_average}
                     color={vote_average > 6 ? "primary" : "secondary"}
@@ -38,7 +40,7 @@ const SingleContent = (
                         {first_air_date || release_date}
                     </span>
                 </span>
-            </div>
+            </ContentModal>
         );
     }
 ;
