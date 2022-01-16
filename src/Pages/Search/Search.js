@@ -1,27 +1,34 @@
-import React, {useEffect, useState} from 'react';
+import {
+    Button,
+    createTheme,
+    Tab,
+    Tabs,
+    TextField,
+    ThemeProvider,
+} from "@material-ui/core";
 
-import {Button, Tab, Tabs, TextField, ThemeProvider} from "@mui/material";
-import {createTheme} from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
+import {useEffect, useState} from "react";
 import axios from "axios";
-import SingleContent from "../../components/SingleContent/SingleContent";
 import CustomPagination from "../../components/Pagination/CustomPagination";
+import SingleContent from "../../components/SingleContent/SingleContent";
 
+import "./Search.css";
 
 const Search = () => {
     const [type, setType] = useState(0);
-    const [page, setPage] = useState(1);
     const [searchText, setSearchText] = useState("");
-    const [content, setContent] = useState();
-    const [numOfPages, setNumOfPages] = useState(1);
+    const [page, setPage] = useState(1);
+    const [content, setContent] = useState([]);
+    const [numOfPages, setNumOfPages] = useState();
 
     const darkTheme = createTheme({
         palette: {
             type: "dark",
             primary: {
                 main: "#fff",
-            }
-        }
+            },
+        },
     });
 
     const fetchSearch = async () => {
@@ -31,7 +38,7 @@ const Search = () => {
             );
             setContent(data.results);
             setNumOfPages(data.total_pages);
-            console.log(data);
+            // console.log(data);
         } catch (error) {
             console.error(error);
         }
@@ -39,63 +46,61 @@ const Search = () => {
 
     useEffect(() => {
         window.scroll(0, 0);
-        fetchSearch().then();
+        fetchSearch();
+        // eslint-disable-next-line
     }, [type, page]);
 
     return (
         <div>
             <ThemeProvider theme={darkTheme}>
-                <div style={{display: "flex", margin: "15px 0"}}>
+                <div className="search">
                     <TextField
                         style={{flex: 1}}
                         className="searchBox"
-                        lable="Search"
+                        label="Search"
                         variant="filled"
                         onChange={(e) => setSearchText(e.target.value)}
                     />
-                    <Button variant="contained" style={{marginLeft: 10}} onClick={fetchSearch}>
-                        <SearchIcon/>
+                    <Button
+                        onClick={fetchSearch}
+                        variant="contained"
+                        style={{marginLeft: 10}}
+                    >
+                        <SearchIcon fontSize="large"/>
                     </Button>
                 </div>
-
-                <Tabs value={type}
-                      indicatorColor="primary"
-                      textColor="primary"
-                      onChange={(e, newValue) => {
-                          setType(newValue);
-                          setPage(1);
-                      }}
-                      style={{paddingBottom: 5}}
+                <Tabs
+                    value={type}
+                    indicatorColor="primary"
+                    textColor="primary"
+                    onChange={(event, newValue) => {
+                        setType(newValue);
+                        setPage(1);
+                    }}
+                    style={{paddingBottom: 5}}
+                    aria-label="disabled tabs example"
                 >
-
-                    <Tab
-                        style={{width: "50%"}}
-                        label="Search Movies"
-                    />
-                    <Tab
-                        style={{width: "50%"}}
-                        label="Search TV Series"
-                    />
+                    <Tab style={{width: "50%"}} label="Search Movies"/>
+                    <Tab style={{width: "50%"}} label="Search TV Series"/>
                 </Tabs>
             </ThemeProvider>
-
             <div className="trending">
-                {
-                    content && content.map(movie =>
-                        <SingleContent key={movie.id} movie={movie}/>)
-                }
-                {
-                    searchText &&
-                    !content &&
-                    (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)
-                }
-            </div>
-            {
-                numOfPages > 1 && (
-                    <CustomPagination setPage={setPage} numberOfPages={500}/>
+                {content &&
+                content.map((movie) => (
+                    <SingleContent
+                        key={movie.id}
+                        movie={movie}
+                        media_type={type ? "tv" : "movie"}
 
-                )
-            }
+                    />
+                ))}
+                {searchText &&
+                !content &&
+                (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)}
+            </div>
+            {numOfPages > 1 && (
+                <CustomPagination setPage={setPage} numOfPages={numOfPages}/>
+            )}
         </div>
     );
 };
