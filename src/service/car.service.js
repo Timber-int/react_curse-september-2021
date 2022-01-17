@@ -9,16 +9,12 @@ export const carService = {
 
     getById: (id) => axiosService.get(`${urls.cars}/${id}`).then(value => value.data),
 
-    updateById: (id, {model, price, year}) => axiosService.put(`${urls.cars}/${id}`, {
-        body: JSON.stringify({
-            model: `${model}`,
-            price: `${price}`,
-            year: `${year}`,
-        }),
+    updateById: (id, obj) => axiosService.put(`${urls.cars}/${id}`, obj,{
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
-    }).then(value => value.data),
+        }
+    ).then(value => value.data),
 
     deleteById: (id) => axiosService.delete(`${urls.cars}/${id}`),
 }

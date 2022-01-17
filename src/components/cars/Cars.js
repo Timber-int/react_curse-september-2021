@@ -2,11 +2,18 @@ import React, {useEffect, useState} from 'react';
 import carService from "../../service/car.service";
 import Car from "../car/Car";
 import {useForm} from "react-hook-form";
+import {joiResolver} from "@hookform/resolvers/joi";
+import {newCarFormValidator} from "../../validators/car.validator";
 
 const Cars = ({car}) => {
     const [cars, setCars] = useState([]);
 
-    const {register, handleSubmit} = useForm();
+    const [formError, setFormError] = useState({});
+
+    const {register, handleSubmit, formState: {errors}} = useForm({
+        resolver: joiResolver(newCarFormValidator),
+        mode: 'onTouched'
+    });
 
     useEffect(() => {
         carService.getAll().then(value => setCars([...value]));
@@ -18,8 +25,16 @@ const Cars = ({car}) => {
     }
 
     const updateCar = (data) => {
-        console.log(data)
-        carService.updateById(data.id, {model: data.model, price: data.price, year: data.year}).then(value => value.data);
+        try {
+            carService.updateById(data.id, {
+                model: data.model,
+                price: data.price,
+                year: data.year
+            }).then();
+        } catch (e) {
+            setFormError(e.response.data);
+        }
+
     }
 
     return (
@@ -38,6 +53,7 @@ const Cars = ({car}) => {
                                 placeholder={"id"}
                             /></label>
                         </div>
+                        {errors.id && <span>{errors.id.message}</span>}
 
                         <div>
                             <label>Model: <input
@@ -47,7 +63,7 @@ const Cars = ({car}) => {
                                 placeholder={"model"}
                             /></label>
                         </div>
-
+                        {errors.model && <span>{errors.model.message}</span>}
                         <div>
                             <label>Price: <input
                                 type="text"
@@ -56,7 +72,7 @@ const Cars = ({car}) => {
                                 placeholder={"price"}
                             /></label>
                         </div>
-
+                        {errors.price && <span>{errors.price.message}</span>}
                         <div>
                             <label>Year: <input
                                 type="text"
@@ -65,6 +81,7 @@ const Cars = ({car}) => {
                                 placeholder={"year"}
                             /></label>
                         </div>
+                        {errors.year && <span>{errors.year.message}</span>}
                         <div>
                             <button>Update car</button>
                         </div>
