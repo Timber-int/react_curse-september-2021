@@ -31,7 +31,7 @@ const Cars = ({car}) => {
                     <form onSubmit={handleSubmit(updateCar)}>
 
                         <div>
-                            <label>Model: <input
+                            <label>Id: <input
                                 type="number"
                                 defaultValue={''}
                                 {...register('id')}
