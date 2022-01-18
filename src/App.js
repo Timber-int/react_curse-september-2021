@@ -1,10 +1,7 @@
 import {Route, Routes} from "react-router-dom";
 import {Layout} from "./components/Layout/Layout";
-import {UsersPage} from "./pages/usersPage/UsersPage";
-import {PostsPage} from "./pages/postsPage/PostsPage";
-import {NotFoundPage} from "./pages/notFoundPage/NotFoundPage";
-import {PostDetailsPage} from "./pages/postDetailsPage/PostDetailsPage";
-import {UserDetailsPage} from "./pages/userDetailsPage/UserDetailsPage";
+import {NotFoundPage, PostDetailsPage, PostsPage, UserDetailsPage, UsersPage} from "./pages";
+
 
 function App() {
     return (
