@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+
+.users-container {
+    width: 45%;
+    margin-right: 65px;
+}
+
+.content {
+    width: 45%;
+}

@@ -1,0 +1,22 @@
+.posts-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 45%;
+    margin-right: 65px;
+    overflow:hidden;
+    overflow-y: auto;
+    justify-content: center;
+  text-align: center;
+
+}
+
+.full-content {
+    width: 45%;
+}
