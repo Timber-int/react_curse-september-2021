@@ -20,7 +20,7 @@ const UserDetailsPage = () => {
             return;
         }
         usersService.getById(id).then(value => setUser({...value}));
-    }, []);
+    }, [id]);
 
     const getAllPostsOfUser = () => {
         usersService.getPostsById(id).then(value => setPosts([...value]));
@@ -37,6 +37,20 @@ const UserDetailsPage = () => {
                                 <div>Name: {user.name} </div>
                                 <div>UserName: {user.username}</div>
                                 <div>Email: {user.email}</div>
+                                <div>
+                                    Address:
+                                    <div>Street: {user.address.street}</div>
+                                    <div>Suite: {user.address.suite}</div>
+                                    <div>City: {user.address.city}</div>
+                                    <div>Zipcode: {user.address.zipcode}</div>
+                                    <div>
+                                        Geo:
+                                        <div>
+                                            <div>Lat: {user.address.geo.lat}</div>
+                                            <div>Lng: {user.address.geo.lng}</div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div>Phone: {user.email}</div>
                                 <div>Website: {user.email}</div>
                             </div>

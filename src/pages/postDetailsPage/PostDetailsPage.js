@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {useLocation, useParams} from "react-router-dom";
 import {postsService} from "../../services/posts-axios.service";
 import {Comments} from "../../components/Comments/Comments";
+import "./PostDetailsPage.css";
 
 const PostDetailsPage = () => {
     const params = useParams();
@@ -21,7 +22,7 @@ const PostDetailsPage = () => {
             return;
         }
         postsService.getById(id).then(value => setPost({...value}));
-    }, []);
+    }, [id]);
 
     const getAllCommentsOfPost = () => {
         postsService.getCommentsById(id).then(value => setComments([...value]));
@@ -33,7 +34,7 @@ const PostDetailsPage = () => {
                 post && (
                     <div>
                         <div>
-                            <div>
+                            <div className="detail_post-info">
                                 <div>Id: {id}</div>
                                 <div>Title: {post.title}</div>
                                 <div>Body: {post.body}</div>
@@ -41,10 +42,10 @@ const PostDetailsPage = () => {
                             </div>
 
                             <div>
-                                <button onClick={getAllCommentsOfPost}>Comments of post</button>
+                                <center><button onClick={getAllCommentsOfPost}>Comments of post</button></center>
                             </div>
                         </div>
-                        <div >
+                        <div>
                             <Comments comments={comments}/>
                         </div>
                     </div>
