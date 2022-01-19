@@ -1,0 +1,6 @@
+.photos-container {
+    height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+    margin-top: 10px;
+}
