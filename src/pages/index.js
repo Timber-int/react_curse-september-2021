@@ -6,3 +6,6 @@ export * from "./userDetailsPage/UserDetailsPage";
 export * from "./userDetailsPage/UserDetailsPage.css";
 export * from "./usersPage/UsersPage";
 export * from "./usersPage/UsersPage.css";
+export * from "./userAlbumsPage/UserAlbumPage";
+export * from "./photosPage/PhotosPage.css";
+export * from "./photosPage/PhotosPage";

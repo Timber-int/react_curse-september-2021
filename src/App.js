@@ -1,8 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import {Layout} from "./components/Layout/Layout";
-import {NotFoundPage, PostDetailsPage, PostsPage, UserDetailsPage, UsersPage} from "./pages";
-import {UserAlbumPage} from "./pages/userAlbumsPage/UserAlbumPage";
-import {PhotosPage} from "./pages/photosPage/PhotosPage";
+import {NotFoundPage, PhotosPage, PostDetailsPage, PostsPage, UserAlbumPage, UserDetailsPage, UsersPage} from "./pages";
 
 
 function App() {
