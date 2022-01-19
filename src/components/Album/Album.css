@@ -1,0 +1,17 @@
+.album-box {
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    width: 200px;
+}
+
+.album-title {
+    font-size: 12px;
+    margin: 5px;
+    text-align: left;
+}
+
+.album-title:hover {
+    text-decoration: underline;
+    font-size: 14px;
+}

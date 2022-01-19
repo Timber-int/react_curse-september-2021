@@ -1,0 +1,7 @@
+.photo-box {
+    text-align: center;
+}
+
+.photo-box > div {
+    font-size: 8px;
+}

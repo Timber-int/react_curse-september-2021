@@ -2,7 +2,6 @@ import {Route, Routes} from "react-router-dom";
 import {Layout} from "./components/Layout/Layout";
 import {NotFoundPage, PostDetailsPage, PostsPage, UserDetailsPage, UsersPage} from "./pages";
 
-
 function App() {
     return (
         <div className="App">

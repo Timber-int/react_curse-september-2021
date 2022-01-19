@@ -6,10 +6,18 @@
 }
 
 .users-container {
-    width: 45%;
-    margin-right: 65px;
+    width: 30%;
+    margin: 10px;
 }
 
 .content {
-    width: 45%;
+    width: 30%;
+    margin: 10px;
+
+}
+
+.albums-container {
+    width: 30%;
+    margin: 10px;
+
 }
