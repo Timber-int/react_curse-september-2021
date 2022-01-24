@@ -9,12 +9,10 @@ const EpisodesPage = () => {
     const [episodes, setEpisodes] = useState([]);
 
     const [page, setPage] = useState(1);
-    console.log(page);
 
     useEffect(() => {
         contentService.getAll(page).then(value => setEpisodes([...value.results]));
     }, [page]);
-
 
     return (
         <div>
