@@ -2,7 +2,7 @@ import {axiosService} from "./axios.service";
 import {baseURL, urls} from "../configs/urls";
 
 const contentService = {
-    getAll: () => axiosService.get(`${baseURL}${urls.episode}`).then(value => value.data),
+    getAll: (page) => axiosService.get(`${baseURL}${urls.episode}?page=${page}`).then(value => value.data),
 }
 
 export {contentService};
