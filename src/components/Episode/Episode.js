@@ -7,9 +7,9 @@ const Episode = ({episodeElement}) => {
     const {id, name, episode, air_date} = episodeElement;
     return (
         <div className={css.box}>
-            <h2>{name}</h2>
-            <h4>Episode: {episode}</h4>
-            <h5>Air date: {air_date}</h5>
+            <div>{name}</div>
+            <div>Episode: {episode}</div>
+            <div>Air date: {air_date}</div>
             <Link to={`episode/${id}`} state={episodeElement}>Episode details</Link>
         </div>
     );

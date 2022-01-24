@@ -1,3 +1,18 @@
-.box{
+.box {
+    width: 20%;
+    margin: 5px;
+    background-color: lightcoral;
+}
 
+.box > img {
+
+    height: 200px;
+    width: 100%;
+}
+
+.box > div {
+    font-size: 10px;
+    text-align: left;
+    margin: 5px;
+    height:22px;
 }

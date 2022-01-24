@@ -1,0 +1,25 @@
+.wrapper {
+    min-height: 50px;
+    background: #2E94E3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.wrapper > button {
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    border: 2px solid snow;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.2s;
+    transition-property: background, box-shadow;
+}
+
+.wrapper > button:hover {
+    box-shadow: 0 0 0 5px lightgreen;
+    font-size: 18px;
+}

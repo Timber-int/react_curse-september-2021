@@ -23,6 +23,7 @@ const EpisodesPageDetails = () => {
 
     return (
         <div>
+            <center><h1>Riki and Morty Episode Characters</h1></center>
             <Characters charactersValue={charactersValue}/>
         </div>
     );

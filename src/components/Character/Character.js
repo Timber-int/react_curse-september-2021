@@ -8,9 +8,7 @@ const Character = ({character}) => {
 
     return (
         <div className={css.box}>
-            <div>
-                <img src={image} alt={name}/>
-            </div>
+            <img src={image} alt={name}/>
             <div>Name: {name}</div>
             <div>Gender: {gender}</div>
             <div>Species: {species}</div>
