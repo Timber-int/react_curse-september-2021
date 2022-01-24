@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+
 import {useLocation} from "react-router-dom";
 import {characterService} from "../../services/character-axios.service";
 import {Characters} from "../../components/Characters/Characters";
@@ -13,7 +14,6 @@ const EpisodesPageDetails = () => {
     const idsArray = [];
 
     characters.map(character => {
-        // console.log(character.split('/').pop());
         idsArray.push(character.split('/').pop())
     });
 
