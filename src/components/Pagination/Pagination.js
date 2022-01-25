@@ -16,8 +16,8 @@ const Pagination = ({setPage, page}) => {
 
     return (
         <div className={css.wrapper}>
-            <button onClick={prev}>Prev</button>
-            <button onClick={next}>Next</button>
+            <button className={page <= 1 ? css.notClickable : css.clickable} onClick={prev}>Prev</button>
+            <button className={page >= 3 ? css.notClickable : css.clickable} onClick={next}>Next</button>
         </div>
     );
 };

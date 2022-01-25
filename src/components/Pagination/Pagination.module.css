@@ -7,7 +7,7 @@
     margin-bottom: 0;
 }
 
-.wrapper > button {
+.clickable, .notClickable {
     margin: 10px;
     height: 40px;
     width: 40px;
@@ -17,6 +17,11 @@
     cursor: pointer;
     transition: 0.2s;
     transition-property: background, box-shadow;
+}
+
+.notClickable{
+    pointer-events: none;
+    background: red;
 }
 
 .wrapper > button:hover {
