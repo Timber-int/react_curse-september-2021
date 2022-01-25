@@ -7,6 +7,7 @@ import {urls} from "../config/urls";
 const Content = () => {
 
     const [imageCard, setImageCard] = useState('');
+
     const [element, setElement] = useState('');
 
     useEffect(() => {
