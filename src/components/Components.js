@@ -48,6 +48,7 @@ const Components = () => {
                 <button style={{background: "orange"}} onClick={() => dispatch({type: 'reset1', payload: 0})}>Reset
                 </button>
             </div>
+
             <div className={css.box}>
                 <center><h4>{state.count2}</h4></center>
                 <button style={{background: "green"}} onClick={() => dispatch({type: 'increment2'})}>Increment</button>
@@ -55,6 +56,7 @@ const Components = () => {
                 <button style={{background: "orange"}} onClick={() => dispatch({type: 'reset2', payload: 1})}>Reset
                 </button>
             </div>
+
             <div className={css.box}>
                 <center><h4>{state.count3}</h4></center>
                 <button style={{background: "green"}} onClick={() => dispatch({type: 'increment3'})}>Increment</button>
