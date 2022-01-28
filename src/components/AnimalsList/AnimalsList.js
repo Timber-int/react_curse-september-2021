@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useState} from 'react';
 
 import {v4 as uuid} from 'uuid';
 import {AnimalsForm} from "../AnimalsForm/AnimalsForm";
@@ -49,14 +49,19 @@ const reducerAnimal = (state, action) => {
 const AnimalsList = () => {
     const [state, dispatch] = useReducer(reducerAnimal, initialState);
 
+    const [dogValue, setDogValue] = useState('');
+    const [catValue, setCatValue] = useState('');
+
     const onSubmitCat = (e) => {
         e.preventDefault();
+        setCatValue('');
         const cat = e.target.cat.value;
         dispatch({type: 'addCat', payload: {id: uuid(), cat}});
     }
 
     const onSubmitDog = (e) => {
         e.preventDefault();
+        setDogValue('');
         const dog = e.target.dog.value;
         dispatch({type: 'addDog', payload: {id: uuid(), dog}});
     }
@@ -71,10 +76,17 @@ const AnimalsList = () => {
 
     return (
         <div>
-            <AnimalsForm onSubmitCat={onSubmitCat} onSubmitDog={onSubmitDog}/>
+            <AnimalsForm
+                onSubmitCat={onSubmitCat}
+                onSubmitDog={onSubmitDog}
+                setDogValue={setDogValue}
+                setCatValue={setCatValue}
+                dogValue={dogValue}
+                catValue={catValue}
+            />
             <hr/>
             <div className={css.animals_container}>
-                <div style={{width:"45%"}}>
+                <div style={{width: "45%"}}>
                     {
                         state.cats.length
                             ?
@@ -85,7 +97,7 @@ const AnimalsList = () => {
                     }
                 </div>
 
-                <div style={{width:"45%"}}>
+                <div style={{width: "45%"}}>
                     {
                         state.dogs.length
                             ?
