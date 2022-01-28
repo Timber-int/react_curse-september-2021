@@ -39,7 +39,7 @@ const reducerAnimal = (state, action) => {
             const {id} = action.payload;
             return {
                 ...state,
-                dogs: [...state.dogs.filter(dog=>dog.id !== id)]
+                dogs: [...state.dogs.filter(dog => dog.id !== id)]
             }
         }
 
@@ -72,23 +72,30 @@ const AnimalsList = () => {
     return (
         <div>
             <AnimalsForm onSubmitCat={onSubmitCat} onSubmitDog={onSubmitDog}/>
+            <hr/>
             <div className={css.animals_container}>
-                {
-                    state.cats.length
-                        ?
-                        <CatsList cats={state.cats} removeCat={removeCat}/>
-                        :
-                        <>
-                        </>
-                }
-                {
-                    state.dogs.length
-                        ?
-                        <DogsList dogs={state.dogs} removeDog={removeDog}/>
-                        :
-                        <>
-                        </>
-                }
+                <div style={{width:"45%"}}>
+                    {
+                        state.cats.length
+                            ?
+                            <CatsList cats={state.cats} removeCat={removeCat}/>
+                            :
+                            <>
+                            </>
+                    }
+                </div>
+
+                <div style={{width:"45%"}}>
+                    {
+                        state.dogs.length
+                            ?
+                            <DogsList dogs={state.dogs} removeDog={removeDog}/>
+                            :
+                            <>
+                            </>
+                    }
+                </div>
+
             </div>
         </div>
     );
