@@ -1,7 +1,7 @@
 import React from 'react';
 
 import css from './DogsList.module.css';
-import {Dog} from "../Dog/Dog";
+import {Dog} from '../Dog/Dog';
 
 const DogsList = ({dogs ,removeDog}) => {
     return (

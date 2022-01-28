@@ -1,6 +1,6 @@
 import React from 'react';
 
-import css from "./Dog.module.css";
+import css from './Dog.module.css';
 
 const Dog = ({dog, removeDog}) => {
     return (

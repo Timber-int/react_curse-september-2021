@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Cat} from "../Cat/Cat";
+import {Cat} from '../Cat/Cat';
 import css from './CatsList.module.css';
 
 const CatsList = ({cats, removeCat}) => {

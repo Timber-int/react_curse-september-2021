@@ -1,9 +1,9 @@
-import {AnimalsList} from "./components/AnimalsList/AnimalsList";
+import {AnimalsList} from './components/AnimalsList/AnimalsList';
 
 
 function App() {
     return (
-        <div className="App">
+        <div className='App'>
             <AnimalsList/>
         </div>
     );

@@ -1,10 +1,10 @@
 import React, {useReducer, useState} from 'react';
 
 import {v4 as uuid} from 'uuid';
-import {AnimalsForm} from "../AnimalsForm/AnimalsForm";
-import {CatsList} from "../CatsList/CatsList";
-import {DogsList} from "../DogsList/DogsList";
-import css from "./AnimalsList.module.css";
+import {AnimalsForm} from '../AnimalsForm/AnimalsForm';
+import {CatsList} from '../CatsList/CatsList';
+import {DogsList} from '../DogsList/DogsList';
+import css from './AnimalsList.module.css';
 
 
 const initialState = {
@@ -86,7 +86,7 @@ const AnimalsList = () => {
             />
             <hr/>
             <div className={css.animals_container}>
-                <div style={{width: "45%"}}>
+                <div className={css.animals_wrapper}>
                     {
                         state.cats.length
                             ?
@@ -97,7 +97,7 @@ const AnimalsList = () => {
                     }
                 </div>
 
-                <div style={{width: "45%"}}>
+                <div className={css.animals_wrapper}>
                     {
                         state.dogs.length
                             ?
