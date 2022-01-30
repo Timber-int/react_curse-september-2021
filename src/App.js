@@ -1,11 +1,14 @@
+import React from 'react'
+import {CarForm, Cars} from "./components";
 
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
-
+        <div>
+            <CarForm/>
+            <Cars/>
         </div>
     );
-}
+};
 
-export default App;
+export {App};
