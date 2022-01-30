@@ -14,7 +14,9 @@
     "axios": "^0.25.0",
     "react-redux": "^7.2.6",
     "react-hook-form": "^7.25.3",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "joi": "^17.6.0",
+    "@hookform/resolvers": "^2.8.8"
   },
   "scripts": {
     "start": "react-scripts start",
