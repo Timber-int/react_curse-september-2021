@@ -2,6 +2,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 import {carService} from "../services";
 import {LOADING, REJECTED, RESOLVED} from "../constants";
+import axios from "axios";
 
 export const getAllCars = createAsyncThunk(
     'carsSlice/getAllCars',
@@ -39,6 +40,31 @@ export const removeCar = createAsyncThunk(
     }
 );
 
+export const returnCarForUpdate = createAsyncThunk(
+    'carsSlice/returnCarForUpdate',
+    async (car, {dispatch, rejectWithValue}) => {
+        try {
+            return car;
+        } catch (e) {
+            return rejectWithValue(e.message);
+        }
+    }
+);
+
+export const updateAuto = createAsyncThunk(
+    'carsSlice/updateAuto',
+    async (data, {dispatch, rejectWithValue}) => {
+        try {
+            const {id, model, price, year} = data;
+            const carAfterUpdate = await carService.updateById(id, {model, price, year});
+
+            dispatch(carAction.updateCar(carAfterUpdate));
+        } catch (e) {
+            return returnCarForUpdate(e.message);
+        }
+    }
+);
+
 
 const carsSlice = createSlice({
     name: 'carsSlice',
@@ -46,6 +72,7 @@ const carsSlice = createSlice({
         cars: [],
         status: null,
         errors: null,
+        carForUpdates: {},
     },
     reducers: {
         addCar: (state, action) => {
@@ -54,6 +81,10 @@ const carsSlice = createSlice({
         deleteCar: (state, action) => {
             const {id} = action.payload;
             state.cars = state.cars.filter(car => car.id !== id);
+        },
+        updateCar: (state, action) => {
+            const {id, model, price, year} = action.payload;
+            state.cars = state.cars.map(car => car.id === id ? {model, price, year} : car);
         }
     }, extraReducers: {
         [getAllCars.pending]: (state, action) => {
@@ -82,13 +113,38 @@ const carsSlice = createSlice({
         [createCar.rejected]: (state, action) => {
             state.status = REJECTED;
             state.errors = action.payload;
-        }
+        },
+        [returnCarForUpdate.pending]: (state, action) => {
+            state.status = LOADING;
+            state.errors = null;
+        },
+        [returnCarForUpdate.fulfilled]: (state, action) => {
+            state.status = RESOLVED;
+            state.carForUpdates = action.payload;
+        },
+        [returnCarForUpdate.rejected]: (state, action) => {
+            state.status = REJECTED;
+            state.errors = action.payload;
+        },
+        [updateAuto.pending]: (state, action) => {
+            state.status = LOADING;
+            state.errors = null;
+        },
+        [updateAuto.fulfilled]: (state, action) => {
+            state.status = RESOLVED;
+
+        },
+        [updateAuto.rejected]: (state, action) => {
+            state.status = REJECTED;
+            state.errors = action.payload;
+        },
+
     }
 });
 
 const carReducer = carsSlice.reducer;
 
-const {addCar, deleteCar} = carsSlice.actions;
+const {addCar, deleteCar, updateCar} = carsSlice.actions;
 
-export const carAction = {addCar, deleteCar};
+export const carAction = {addCar, deleteCar, updateCar};
 export default carReducer;

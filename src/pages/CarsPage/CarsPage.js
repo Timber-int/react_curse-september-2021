@@ -5,8 +5,12 @@ import {CarForm, Cars} from "../../components";
 const CarsPage = () => {
     return (
         <div>
-            <CarForm/>
-            <Cars/>
+            <div>
+                <CarForm/>
+            </div>
+            <div>
+                <Cars/>
+            </div>
         </div>
     );
 };

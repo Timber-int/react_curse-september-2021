@@ -1,0 +1,30 @@
+.car_box {
+    margin: 5px;
+    font-size: 12px;
+    border: 1px solid black;
+}
+
+.button_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_box > button {
+    margin: 5px;
+    text-align: center;
+    height: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #61dafb;
+    transition: 0.2s;
+    transition-property: background, box-shadow;
+}
+
+
+.button_box > button:hover {
+    box-shadow: 0 0 0 5px lightgreen;
+    color: lightcoral;
+}

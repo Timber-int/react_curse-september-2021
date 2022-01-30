@@ -11,7 +11,7 @@ import Joi from "joi";
             }),
     price: Joi.number()
         .min(0)
-        .max(100000)
+        .max(1000000)
         .required()
         .messages({
             'number.base': 'Ціна мін 1 макс 1000000',
