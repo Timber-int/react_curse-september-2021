@@ -1,8 +1,13 @@
 import axios from "axios";
-import baseURL from "../configs/urls";
+import {baseJsonPlaceholderURL, baseURL} from "../configs";
 
 const axiosService = axios.create({
     baseURL,
 });
 
-export default axiosService;
+
+const axiosServiceJsonPlaceHolder = axios.create({
+    baseURL: baseJsonPlaceholderURL
+});
+
+export {axiosService, axiosServiceJsonPlaceHolder};

@@ -1,0 +1,8 @@
+.box {
+    font-size: 12px;
+    margin: 5px;
+}
+
+.box > center > div {
+    font-weight: bold;
+}

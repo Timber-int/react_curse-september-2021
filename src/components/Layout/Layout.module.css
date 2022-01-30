@@ -1,0 +1,32 @@
+.header {
+    min-height: 70px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header > a {
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color:white;
+}
+
+.header > a:hover {
+    color: red;
+}
+
+.header a[class='active'] {
+    text-decoration: underline;
+    font-size: 22px;
+
+}
+.outlet {
+    width: 95%;
+    margin: 0 auto;
+    height: calc(100vh - 90px);
+    overflow: hidden;
+    overflow-y: auto;
+}
