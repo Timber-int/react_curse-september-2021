@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 
 
 import {useDispatch, useSelector} from "react-redux";
@@ -17,17 +17,29 @@ const CarForm = () => {
 
     const dispatch = useDispatch();
 
-    const {carForUpdates} = useSelector(state => state['carReducer']);
+    let {carForUpdates} = useSelector(state => state['carReducer']);
+
+    const {id, model, price, year} = carForUpdates;
 
     useEffect(() => {
-        setValue('model', carForUpdates.model);
-        setValue('price', carForUpdates.price);
-        setValue('year', carForUpdates.year);
+        setValue('model', model);
+        setValue('price', price);
+        setValue('year', year);
     }, [carForUpdates]);
 
     const onSubmit = (data) => {
-        dispatch(createCar(data));
-        reset();
+        if (id) {
+            dispatch(updateAuto({
+                id: id,
+                model: getValues('model'),
+                price: getValues('price'),
+                year: getValues('year'),
+            }));
+            reset();
+        } else {
+            dispatch(createCar(data));
+            reset();
+        }
     }
 
     return (
@@ -40,19 +52,11 @@ const CarForm = () => {
             {errors.year && <span>{errors.year.message}</span>}
             <div className={css.button_container}>
                 <div>
-                    <input type="submit" value="Create"/>
-                </div>
-                <div>
-                    <input type="button" value="Update" onClick={() => dispatch(updateAuto({
-                        id: carForUpdates.id,
-                        model: getValues('model'),
-                        price: getValues('price'),
-                        year: getValues('year'),
-                    }))}/>
+                    <input type="submit" value={"Create"}/>
                 </div>
             </div>
         </form>
     );
-};
+}
 
 export {CarForm};
