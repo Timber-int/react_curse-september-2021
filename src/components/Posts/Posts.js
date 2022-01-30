@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React, {useEffect} from "react";
+
 import {Post} from "../Post/Post";
 import {useDispatch, useSelector} from "react-redux";
 import {LOADING} from "../../constants";
@@ -6,7 +7,7 @@ import {getAllPosts} from "../../store";
 
 const Posts = () => {
 
-    const {posts, errors, status} = useSelector(state => state['postsReducer']);
+    const {posts, errors, status} = useSelector(state => state["postsReducer"]);
 
     const dispatch = useDispatch();
 

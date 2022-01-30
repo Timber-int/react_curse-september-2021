@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React, {useEffect} from "react";
+
 import {useDispatch, useSelector} from "react-redux";
 import {LOADING} from "../../constants";
 import {getAllUsers} from "../../store";
@@ -6,7 +7,7 @@ import {User} from "../User/User";
 
 const Users = () => {
 
-    const {users, errors, status} = useSelector(state => state['usersReducer']);
+    const {users, errors, status} = useSelector(state => state["usersReducer"]);
 
     const dispatch = useDispatch();
 

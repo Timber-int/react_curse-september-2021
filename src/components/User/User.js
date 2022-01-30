@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const User = ({user: {id, name, username, email}}) => {
     return (

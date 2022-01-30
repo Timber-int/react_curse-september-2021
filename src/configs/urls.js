@@ -1,12 +1,14 @@
-const baseURL = 'http://91.201.233.14/api/v2';
+import {CARS, CARS_URL, COMMENTS, JSON_PLACE_URL, POSTS, USERS,} from "../constants";
 
-const baseJsonPlaceholderURL = 'https://jsonplaceholder.typicode.com';
+const baseURL = CARS_URL;
+
+const baseJsonPlaceholderURL = JSON_PLACE_URL;
 
 export const urls = {
-    cars: '/cars',
-    users: '/users',
-    posts: '/posts',
-    comments: '/comments',
+    cars: CARS,
+    users: USERS,
+    posts: POSTS,
+    comments: COMMENTS,
 }
 
 export {baseURL, baseJsonPlaceholderURL};

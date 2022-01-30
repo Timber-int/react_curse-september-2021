@@ -1,4 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
+
 import carReducer from "./cars.slice";
 import usersReducer from "./users.slice";
 import postsReducer from "./posts.slice";

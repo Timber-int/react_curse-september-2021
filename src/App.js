@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+
 import {Layout} from "./components";
 import {Route, Routes} from "react-router-dom";
 import {CarsPage, CommentsPage, NotFoundPage, PostsPage, UsersPage} from "./pages";

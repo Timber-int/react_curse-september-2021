@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+
 import {CarForm, Cars} from "../../components";
 
 const CarsPage = () => {

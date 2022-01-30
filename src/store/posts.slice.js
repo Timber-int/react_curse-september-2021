@@ -1,4 +1,5 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
+
 import {postsService} from "../services";
 import {LOADING, REJECTED, RESOLVED} from "../constants";
 

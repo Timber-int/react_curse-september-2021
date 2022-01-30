@@ -1,3 +1,9 @@
 export const LOADING = "Loading";
 export const RESOLVED = "resolved";
 export const REJECTED = "rejected";
+export const CARS_URL = "http://91.201.233.14/api/v2";
+export const JSON_PLACE_URL  = "https://jsonplaceholder.typicode.com";
+export const CARS = '/cars';
+export const USERS = '/users';
+export const POSTS = '/posts';
+export const COMMENTS = '/comments';
