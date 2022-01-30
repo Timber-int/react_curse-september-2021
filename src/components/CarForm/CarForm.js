@@ -41,7 +41,7 @@ const CarForm = () => {
             reset();
         }
     }
-    console.log(carForUpdates)
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={css.form_container}>
             <div><label>Model: <input type="text" {...register("model")} required/></label></div>
