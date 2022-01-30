@@ -41,7 +41,7 @@ const CarForm = () => {
             reset();
         }
     }
-
+    console.log(carForUpdates)
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={css.form_container}>
             <div><label>Model: <input type="text" {...register("model")} required/></label></div>
@@ -52,7 +52,7 @@ const CarForm = () => {
             {errors.year && <span>{errors.year.message}</span>}
             <div className={css.button_container}>
                 <div>
-                    <input type="submit" value={"Create"}/>
+                    <input type="submit" value={id ? "Update" : "Create"}/>
                 </div>
             </div>
         </form>

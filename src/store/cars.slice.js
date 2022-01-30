@@ -85,6 +85,7 @@ const carsSlice = createSlice({
         updateCar: (state, action) => {
             const {id, model, price, year} = action.payload;
             state.cars = state.cars.map(car => car.id === id ? {model, price, year} : car);
+            state.carForUpdates={};
         }
     }, extraReducers: {
         [getAllCars.pending]: (state, action) => {
