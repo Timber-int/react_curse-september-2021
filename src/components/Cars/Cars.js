@@ -4,7 +4,6 @@ import {Car} from "../Car/Car";
 import {useDispatch, useSelector} from "react-redux";
 import {LOADING} from "../../constants";
 import {getAllCars} from "../../store";
-import {v4 as uuid} from "uuid";
 import css from "./Cars.module.css";
 
 
@@ -23,7 +22,7 @@ const Cars = () => {
             {status === LOADING && <center><h1>Loading...</h1></center>}
             {errors && <center><h1>{errors}</h1></center>}
             {
-                cars.map(car => <Car key={car.id + uuid()} car={car}/>)
+                cars.map(car => <Car key={car.id} car={car}/>)
             }
         </div>
     );
