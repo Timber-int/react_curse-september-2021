@@ -1,0 +1,41 @@
+.todoChecked {
+    width: 250px;
+    text-decoration: line-through;
+    background-color: lightcoral;
+    border-radius: 5px;
+    height: 30px;
+    margin: 5px;
+}
+
+.todoNotChecked {
+    width: 250px;
+    text-decoration: none;
+    background-color: lightgreen;
+    border-radius: 5px;
+    height: 30px;
+    margin: 5px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding-bottom: 5px;
+}
+.btn-delete{
+    width: 60px;
+    height: 35px;
+    background-color: #790e43;
+    color: #ccc;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    outline: none;
+    cursor: pointer;
+    margin: 5px;
+}
+.check_box{
+
+}

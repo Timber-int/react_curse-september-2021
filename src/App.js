@@ -1,9 +1,18 @@
+import React from "react";
 
+import {TodoForm, TodoList} from "./components";
+import "./App.css";
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
-
+        <div className="container">
+            <div className="app-wrapper">
+                <header><h1>TodoApp</h1></header>
+                <div className="main">
+                    <TodoForm/>
+                    <TodoList/>
+                </div>
+            </div>
         </div>
     );
 }
