@@ -24,7 +24,8 @@ const TodoForm = () => {
                 <label>
                     <input
                         className={css.task_input}
-                        type="text" {...register("todo")}
+                        type="text"
+                        {...register("todo")}
                         required
                         placeholder="Add todo..."
                     />

@@ -6,7 +6,6 @@ const todosSlice = createSlice({
     name: 'todosSlice',
     initialState: {
         todos: [],
-        chosenTodo: {},
         completeCount: 0,
     },
     reducers: {
@@ -17,16 +16,17 @@ const todosSlice = createSlice({
         deleteTodo: (state, action) => {
             const id = action.payload.id;
             state.todos = state.todos.filter(todo => todo.id !== id);
+            state.completeCount = state.completeCount === 0 ? 0 : state.completeCount - 1;
         },
         checkedTodo: (state, action) => {
             const {id, status} = action.payload.data;
             state.todos = state.todos.map(todo => todo.id === id ? {...todo, status: status} : todo);
             if (status === true) {
                 state.completeCount = state.completeCount + 1;
-            } else {
+            } else if (status === false) {
                 state.completeCount = state.completeCount === 0 ? 0 : state.completeCount - 1;
             }
-        },
+        }
     }
 });
 
