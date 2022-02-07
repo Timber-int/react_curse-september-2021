@@ -48,3 +48,11 @@ a {
     height: 20px;
     margin: 5px 5px 5px 10px;
 }
+
+.movie-card_original-title{
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: #ffffff;
+}

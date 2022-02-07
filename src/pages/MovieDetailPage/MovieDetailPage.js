@@ -1,9 +1,11 @@
 import React from 'react';
 
+import {MoviesListCard} from '../../components';
+
 const MovieDetailPage = () => {
     return (
         <div>
-            MovieDetailPage
+            <MoviesListCard/>
         </div>
     );
 };

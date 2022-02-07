@@ -5,7 +5,7 @@ import {img_300, unavailable} from '../../constants';
 import {Rating} from '../Rating/Rating';
 import './Movie.css';
 
-const Movie = ({movie}) => {
+const Movie = ({movie,page}) => {
     const {
         id,
         poster_path,
@@ -16,7 +16,7 @@ const Movie = ({movie}) => {
 
     return (
         <div className='movie-card'>
-            <NavLink to={`/${id.toString()}`} state={movie}>
+            <NavLink to={`/${id.toString()}`} state={[movie,page]} >
                 <img className='poster'
                      src={poster_path ? `${img_300}/${poster_path}` : unavailable}
                      alt={title}
@@ -27,7 +27,7 @@ const Movie = ({movie}) => {
                     <span className='release-date'>{release_date}</span>
                 </div>
             </NavLink>
-            <Rating vote_average={vote_average}/>
+            <Rating vote_average={vote_average} starSize={25}/>
         </div>
     );
 };
