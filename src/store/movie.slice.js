@@ -5,9 +5,9 @@ import {LOADING, REJECTED, RESOLVED} from '../constants';
 
 export const getAllMovies = createAsyncThunk(
     'movieSlice/getAllMovies',
-    async (_, {dispatch, rejectWithValue}) => {
+    async ({page}, {dispatch, rejectWithValue}) => {
         try {
-            const data = await movieService.getAllDiscoverMovie();
+            const data = await movieService.getAllDiscoverMovie(page);
 
             return {movies: data.results};
         } catch (e) {

@@ -4,3 +4,4 @@ export * from './MoviesListCard/MoviesListCard';
 export * from './Layout/Layout';
 export * from './Movie/Movie';
 export * from './Rating/Rating';
+export * from './Pagination/CustomPagination';

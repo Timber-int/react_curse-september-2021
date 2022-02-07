@@ -1,34 +1,41 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {getAllMovies} from '../../store';
 import {LOADING} from '../../constants';
 import {Movie} from '../Movie/Movie';
 import './MoviesList.css';
+import {CustomPagination} from '../Pagination/CustomPagination';
 
 const MoviesList = () => {
 
-        const {movies, status, errors} = useSelector(state => state['moviesReducer']);
+    const [page, setPage] = useState(1);
 
-        const dispatch = useDispatch();
+    const [numOfPages, setNumOfPages] = useState(500);
 
-        useEffect(() => {
-            dispatch(getAllMovies());
-        }, []);
+    const {movies, status, errors} = useSelector(state => state['moviesReducer']);
 
-    console.log(movies)
-        return (
+    const dispatch = useDispatch();
 
-            <div>
-                {status === LOADING && <center><h1>Loading...</h1></center>}
-                {errors && <center><h1>{errors}</h1></center>}
-                <div className='movies-container'>
-                    {
-                        movies.map(movie => <Movie key={movie.id} movie={movie}/>)
-                    }
-                </div>
+    useEffect(() => {
+        dispatch(getAllMovies({page}));
+    }, [page]);
+
+    return (
+
+        <div>
+            {status === LOADING && <center><h1>Loading...</h1></center>}
+            {errors && <center><h1>{errors}</h1></center>}
+            <div className='movies-container'>
+                {
+                    movies.map(movie => <Movie key={movie.id} movie={movie}/>)
+                }
             </div>
-        );
-    }
+            {
+                numOfPages > 1 && <CustomPagination setPage={setPage} numberOfPages={500}/>
+            }
+        </div>
+    );
+}
 
 export {MoviesList};

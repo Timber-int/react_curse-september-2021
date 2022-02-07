@@ -22,7 +22,10 @@ const Movie = ({movie}) => {
                      alt={title}
                 />
                <div className='title'>{title}</div>
-               <span className='release-date'>Release date: {release_date}</span>
+                <div className='release-date-container'>
+                    <span>Release date:</span>
+                    <span className='release-date'>{release_date}</span>
+                </div>
             </NavLink>
             <Rating vote_average={vote_average}/>
         </div>
