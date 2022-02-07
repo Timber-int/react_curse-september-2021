@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {useLocation} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import {img_500, unavailable} from '../../constants';
 import './MoviesListCard.css';
 
@@ -20,6 +20,7 @@ const MoviesListCard = () => {
 
     return (
         <div className='movie_card-container'>
+            <Link className='movie_card-exit' to={'/'}>❌</Link>
             <div className='movie-card_poster'>
                 <img className='movie-poster_img'
                      src={
