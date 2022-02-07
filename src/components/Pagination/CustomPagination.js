@@ -2,6 +2,8 @@ import React from 'react';
 
 import {Pagination, ThemeProvider} from '@mui/material';
 import {createTheme} from '@material-ui/core';
+import {useDispatch, useSelector} from 'react-redux';
+import {setPageNumber} from '../../store';
 import './CustomPagination.css';
 
 const darkTheme = createTheme({
@@ -10,10 +12,14 @@ const darkTheme = createTheme({
     }
 });
 
-const CustomPagination = ({setPage, numberOfPages = 10}) => {
+const CustomPagination = ({countOfPages}) => {
+
+    const dispatch = useDispatch();
+
+    const {page} = useSelector(state => state['pageReducer']);
 
     const handlePageChange = (page) => {
-        setPage(page);
+        dispatch(setPageNumber({page}));
         window.scroll(0, 0);
     }
 
@@ -21,10 +27,11 @@ const CustomPagination = ({setPage, numberOfPages = 10}) => {
         <div className='pagination-container'>
             <ThemeProvider theme={darkTheme}>
                 <Pagination
-                    count={numberOfPages}
+                    count={countOfPages}
                     onChange={(e) => handlePageChange(e.target.textContent)}
                     hideNextButton
                     hidePrevButton
+                    page={JSON.parse(page)}
                     color='primary'
                 />
             </ThemeProvider>

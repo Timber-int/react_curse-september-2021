@@ -20,6 +20,7 @@
 }
 
 .movie-card_overview {
+    margin-top: 10px;
     font-family: "Montserrat", sans-serif;
     display: flex;
     padding: 15px;

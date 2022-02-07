@@ -6,10 +6,7 @@ import './MoviesListCard.css';
 
 const MoviesListCard = () => {
 
-    const {state} = useLocation();
-
-    const movie = state[0];
-    const page = state[1];
+    const {state: movie} = useLocation();
 
     const {
         poster_path,
