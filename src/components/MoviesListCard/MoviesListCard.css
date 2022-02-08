@@ -7,13 +7,11 @@
 }
 
 .movie-card_poster {
-    width: 45%;
-    display: flex;
-    flex-wrap: wrap;
+    width: 35%;
 }
 
 .movie-card_content {
-    width: 45%;
+    width: 50%;
 }
 
 .movie-poster_img {
@@ -50,14 +48,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    margin: 20px 0 20px 0;
     border-radius: 20px;
 }
 
 .movie-card_information-content > div {
     padding: 5px;
     width: 45%;
-    font-size: 20px;
+    font-size: 16px;
     color: #ffffff;
 }
 

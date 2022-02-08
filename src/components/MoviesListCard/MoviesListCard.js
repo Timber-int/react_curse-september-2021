@@ -1,25 +1,30 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {Link, useLocation} from 'react-router-dom';
 import {img_500, unavailable} from '../../constants';
+import {movieService} from '../../services';
 import './MoviesListCard.css';
-import {useSelector} from "react-redux";
 
 const MoviesListCard = () => {
+
+    const [movieDetails, setMovieDetails] = useState({});
 
     const {state: movie} = useLocation();
 
     const {
+        id,
         poster_path,
         title,
         overview,
         original_language,
         release_date,
         vote_count,
-        original_title
+        original_title,
     } = movie;
 
-    const {genres, status, errors, selectedGenres} = useSelector(state => state['genresReducer']);
+    useEffect(() => {
+        movieService.getById(id).then(value => setMovieDetails({...value}));
+    }, [id]);
 
     return (
         <div className='movie_card-container'>
@@ -43,7 +48,16 @@ const MoviesListCard = () => {
                     <div>Language: {original_language}</div>
                     <div>Release date: {release_date}</div>
                     <div>Vote count: {vote_count}</div>
-                    <div>Genre:</div>
+                    <div>Budget: {movieDetails.budget} $</div>
+                    <div>Runtime: {movieDetails.runtime} min</div>
+                    <div>Country: {
+                        movieDetails.production_countries
+                            ?
+                            movieDetails.production_countries.map(country => country.name)
+                            :
+                            ''
+                    }
+                    </div>
                 </div>
             </div>
         </div>
