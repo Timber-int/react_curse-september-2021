@@ -3,6 +3,7 @@ import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {img_500, unavailable} from '../../constants';
 import './MoviesListCard.css';
+import {useSelector} from "react-redux";
 
 const MoviesListCard = () => {
 
@@ -17,6 +18,8 @@ const MoviesListCard = () => {
         vote_count,
         original_title
     } = movie;
+
+    const {genres, status, errors, selectedGenres} = useSelector(state => state['genresReducer']);
 
     return (
         <div className='movie_card-container'>

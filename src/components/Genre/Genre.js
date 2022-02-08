@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Chip} from '@material-ui/core';
 
-const Genre = ({genre,handleAdd}) => {
+const Genre = ({genre, handleAdd}) => {
 
     const {id, name} = genre;
 
@@ -11,7 +11,7 @@ const Genre = ({genre,handleAdd}) => {
             label={name}
             key={id}
             style={{margin: 2}}
-            size="small"
+            size='small'
             clickable={true}
             onClick={() => handleAdd(genre)}
         />

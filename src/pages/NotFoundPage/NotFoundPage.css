@@ -1,0 +1,16 @@
+.return-home{
+    font-size: 24px;
+    color: #ffffff;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.return-home:hover{
+    font-size: 30px;
+}
+.not-content{
+    font-size: 24px;
+    color: #ffffff;
+    margin-top: 20%;
+}

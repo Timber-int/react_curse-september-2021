@@ -11,8 +11,8 @@ const SelectedGenre = ({genre, handleRemove}) => {
             label={name}
             key={id}
             style={{margin: 2}}
-            size="small"
-            color="primary"
+            size='small'
+            color='primary'
             clickable={true}
             onDelete={() => handleRemove(genre)}
         />

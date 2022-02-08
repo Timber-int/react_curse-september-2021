@@ -3,3 +3,6 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.movies-container-custom_pagination{
+    margin-bottom: 20px;
+}
