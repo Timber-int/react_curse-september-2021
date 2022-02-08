@@ -16,11 +16,22 @@ export const getAllGenres = createAsyncThunk(
     }
 );
 
-export const getChosenGenreId = createAsyncThunk(
-    'genreSlice/getChosenGenreId',
-    async ({id}, {dispatch, rejectWithValue}) => {
+export const addGenreMovie = createAsyncThunk(
+    'genreSlice/addGenreMovie',
+    async ({genre}, {dispatch, rejectWithValue}) => {
         try {
-            dispatch(setChosenGenre({id: id}));
+            dispatch(addGenreToList({genre}));
+        } catch (e) {
+            return rejectWithValue(e.message);
+        }
+    }
+);
+
+export const removeGenreMovie = createAsyncThunk(
+    'genreSlice/removeGenreMovie',
+    async ({genre}, {dispatch, rejectWithValue}) => {
+        try {
+            dispatch(removeGenreToList({genre}));
         } catch (e) {
             return rejectWithValue(e.message);
         }
@@ -33,11 +44,18 @@ const genreSlice = createSlice({
         genres: [],
         status: null,
         error: null,
-        chosenGenre: [],
+        selectedGenres: [],
 
     }, reducers: {
-        setChosenGenre: (state, action) => {
-            state.chosenGenre.push([...state.chosenGenre, action.payload.id]);
+        addGenreToList: (state, action) => {
+            const {id} = action.payload.genre;
+            state.selectedGenres.push(action.payload.genre);
+            state.genres = state.genres.filter(genre => genre.id !== id);
+        },
+        removeGenreToList: (state, action) => {
+            const {id} = action.payload.genre;
+            state.selectedGenres = state.selectedGenres.filter(selected => selected.id !== id);
+            state.genres.push( action.payload.genre);
         }
     },
     extraReducers: {
@@ -59,7 +77,7 @@ const genreSlice = createSlice({
 
 const genresReducer = genreSlice.reducer;
 
-const {setChosenGenre} = genreSlice.actions;
+const {addGenreToList, removeGenreToList} = genreSlice.actions;
 
 export default genresReducer;
-export {setChosenGenre}
+export {addGenreToList, removeGenreToList};

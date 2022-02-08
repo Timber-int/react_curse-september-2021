@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Chip} from '@material-ui/core';
 
-const Genre = ({genre,handleAdd}) => {
+const SelectedGenre = ({genre, handleRemove}) => {
 
     const {id, name} = genre;
 
@@ -12,10 +12,11 @@ const Genre = ({genre,handleAdd}) => {
             key={id}
             style={{margin: 2}}
             size="small"
+            color="primary"
             clickable={true}
-            onClick={() => handleAdd(genre)}
+            onDelete={() => handleRemove(genre)}
         />
     );
 };
 
-export {Genre};
+export {SelectedGenre};

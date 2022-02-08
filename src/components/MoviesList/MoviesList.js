@@ -7,19 +7,22 @@ import {Movie} from '../Movie/Movie';
 import {CustomPagination} from '../Pagination/CustomPagination';
 import {Genres} from '../Genres/Genres';
 import './MoviesList.css';
+import {useGenres} from '../../hooks';
 
 const MoviesList = () => {
     const {movies, status, errors} = useSelector(state => state['moviesReducer']);
 
     const {page, countOfPages} = useSelector(state => state['pageReducer']);
 
-    const {chosenGenre} = useSelector(state => state['genresReducer']);
+    const {selectedGenres} = useSelector(state => state['genresReducer']);
+
+    const genreForURL = useGenres(selectedGenres);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getAllMovies({page,chosenGenre}));
-    }, [page,chosenGenre]);
+        dispatch(getAllMovies({page, genreForURL}));
+    }, [page, selectedGenres]);
 
     return (
         <div>
@@ -33,9 +36,11 @@ const MoviesList = () => {
                     movies.map(movie => <Movie key={movie.id} movie={movie}/>)
                 }
             </div>
-            {
-                countOfPages > 1 && <CustomPagination countOfPages={countOfPages}/>
-            }
+            <div>
+                {
+                    countOfPages > 1 && <CustomPagination countOfPages={countOfPages}/>
+                }
+            </div>
         </div>
     );
 }

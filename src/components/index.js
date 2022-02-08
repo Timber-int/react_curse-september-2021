@@ -7,3 +7,4 @@ export * from './Rating/Rating';
 export * from './Pagination/CustomPagination';
 export * from './Genres/Genres';
 export * from './Genre/Genre';
+export * from './SelectedGenre/SelectedGenre';
