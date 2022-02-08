@@ -5,9 +5,9 @@ import {LOADING, REJECTED, RESOLVED} from '../constants';
 
 export const getAllMovies = createAsyncThunk(
     'movieSlice/getAllMovies',
-    async ({page}, {dispatch, rejectWithValue}) => {
+    async ({page, chosenGenre}, {rejectWithValue}) => {
         try {
-            const data = await movieService.getAllDiscoverMovie(page);
+            const data = await movieService.getAllDiscoverMovie(page, chosenGenre);
 
             return {movies: data.results};
         } catch (e) {
@@ -23,7 +23,6 @@ const movieSlice = createSlice({
         status: null,
         error: null,
     },
-    reducers: {},
     extraReducers: {
         [getAllMovies.pending]: (state, action) => {
             state.status = LOADING;
@@ -41,8 +40,6 @@ const movieSlice = createSlice({
 });
 
 const moviesReducer = movieSlice.reducer;
-const {} = movieSlice.actions;
 
 export default moviesReducer;
-export const movieActions = {};
 
