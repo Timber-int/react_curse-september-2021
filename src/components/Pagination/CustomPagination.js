@@ -25,7 +25,6 @@ const CustomPagination = ({countOfPages}) => {
 
     return (
         <div className='pagination-container'>
-            <ThemeProvider theme={darkTheme}>
                 <Pagination
                     count={countOfPages}
                     onChange={(e) => handlePageChange(e.target.textContent)}
@@ -34,7 +33,7 @@ const CustomPagination = ({countOfPages}) => {
                     page={JSON.parse(page)}
                     color='primary'
                 />
-            </ThemeProvider>
+            
         </div>
     );
 };

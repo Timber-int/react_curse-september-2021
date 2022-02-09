@@ -29,7 +29,9 @@ const MoviesList = () => {
             {status === LOADING && <center><h1>Loading...</h1></center>}
             {errors && <center><h1>{errors}</h1></center>}
 
-            <Genres/>
+            <div className='movies-genres-list'>
+                <Genres/>
+            </div>
 
             <div className='movies-container'>
                 {
