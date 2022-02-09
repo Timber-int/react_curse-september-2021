@@ -3,7 +3,6 @@ import React from 'react';
 import {Route, Routes} from 'react-router-dom';
 import {Layout} from '../components';
 import {MovieDetailPage, MoviesPage, NotFoundPage} from '../pages';
-import './MovieContainer.css';
 
 const MoviesContainer = () => {
     return (
