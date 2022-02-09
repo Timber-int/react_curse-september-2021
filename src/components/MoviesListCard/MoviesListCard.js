@@ -58,6 +58,22 @@ const MoviesListCard = () => {
                             ''
                     }
                     </div>
+                    <div>
+                        Genres: {
+                        movieDetails.genres
+                            ?
+                            movieDetails.genres.map(genre => `${genre.name}; `)
+                            :
+                            ''
+                    }
+                    </div>
+                    <div>IMDB: {movieDetails.imdb_id
+                        ?
+                        movieDetails.imdb_id
+                        :
+                        ''
+                    }
+                    </div>
                 </div>
             </div>
         </div>

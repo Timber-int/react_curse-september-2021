@@ -18,9 +18,10 @@ export const getAllGenres = createAsyncThunk(
 
 export const addGenreMovie = createAsyncThunk(
     'genreSlice/addGenreMovie',
-    async ({genre}, {dispatch, rejectWithValue}) => {
+    async ({genre}, {rejectWithValue}) => {
         try {
-            dispatch(addGenreToList({genre}));
+            await genre;
+            return {genre: genre};
         } catch (e) {
             return rejectWithValue(e.message);
         }
@@ -29,9 +30,10 @@ export const addGenreMovie = createAsyncThunk(
 
 export const removeGenreMovie = createAsyncThunk(
     'genreSlice/removeGenreMovie',
-    async ({genre}, {dispatch, rejectWithValue}) => {
+    async ({genre}, {rejectWithValue}) => {
         try {
-            dispatch(removeGenreToList({genre}));
+            await genre;
+            return {genre: genre};
         } catch (e) {
             return rejectWithValue(e.message);
         }
@@ -42,21 +44,10 @@ const genreSlice = createSlice({
     name: 'genreSlice',
     initialState: {
         genres: [],
+        selectedGenres: [],
         status: null,
         error: null,
-        selectedGenres: [],
 
-    }, reducers: {
-        addGenreToList: (state, action) => {
-            const {id} = action.payload.genre;
-            state.selectedGenres.push(action.payload.genre);
-            state.genres = state.genres.filter(genre => genre.id !== id);
-        },
-        removeGenreToList: (state, action) => {
-            const {id} = action.payload.genre;
-            state.selectedGenres = state.selectedGenres.filter(selected => selected.id !== id);
-            state.genres.push( action.payload.genre);
-        }
     },
     extraReducers: {
         [getAllGenres.pending]: (state, action) => {
@@ -71,13 +62,38 @@ const genreSlice = createSlice({
         [getAllGenres.rejected]: (state, action) => {
             state.status = REJECTED;
             state.error = action.payload;
+        },
+        [addGenreMovie.pending]: (state, action) => {
+            state.status = LOADING;
+            state.error = null;
+        },
+        [addGenreMovie.fulfilled]: (state, action) => {
+            state.status = RESOLVED;
+            const {id} = action.payload.genre;
+            state.selectedGenres.push(action.payload.genre);
+            state.genres = state.genres.filter(genre => genre.id !== id);
+        },
+        [addGenreMovie.rejected]: (state, action) => {
+            state.status = REJECTED;
+            state.error = action.payload;
+        },
+        [removeGenreMovie.pending]: (state, action) => {
+            state.status = LOADING;
+            state.error = null;
+        },
+        [removeGenreMovie.fulfilled]: (state, action) => {
+            state.status = RESOLVED;
+            const {id} = action.payload.genre;
+            state.genres.push(action.payload.genre);
+            state.selectedGenres = state.selectedGenres.filter(selected => selected.id !== id);
+        },
+        [removeGenreMovie.rejected]: (state, action) => {
+            state.status = REJECTED;
+            state.error = action.payload;
         }
     }
 });
 
 const genresReducer = genreSlice.reducer;
 
-const {addGenreToList, removeGenreToList} = genreSlice.actions;
-
 export default genresReducer;
-export {addGenreToList, removeGenreToList};

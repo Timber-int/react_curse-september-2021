@@ -4,7 +4,6 @@ import {Pagination} from '@mui/material';
 import {useDispatch, useSelector} from 'react-redux';
 import {setPageNumber} from '../../store';
 import './CustomPagination.css';
-import {Header} from "../Header/Header";
 
 const CustomPagination = ({countOfPages}) => {
 

@@ -22,7 +22,7 @@ const MoviesList = () => {
 
     useEffect(() => {
         dispatch(getAllMovies({page, genreForURL}));
-    }, [page, selectedGenres]);
+    }, [page, genreForURL]);
 
     return (
         <div>
