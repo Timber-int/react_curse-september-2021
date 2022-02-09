@@ -1,12 +1,11 @@
 .layout-header {
     min-height: 60px;
-    /*gap: 20px;*/
 }
 
 .outlet {
     width: 100%;
     margin: 0 auto;
-    height: calc(100vh - 90px);
+    min-height: 100vh;
     overflow: hidden;
     overflow-y: auto;
 }
@@ -17,10 +16,9 @@
     display: flex;
     justify-content: right;
     box-shadow: 0 1px 5px black;
-    text-transform: uppercase;
     background-color: #39445a;
     font-family: "Montserrat", sans-serif;
-    font-size: 5vw;
+    font-size: 2vw;
     text-decoration: none;
     transition: 0.5s;
     transition-property: background, box-shadow;

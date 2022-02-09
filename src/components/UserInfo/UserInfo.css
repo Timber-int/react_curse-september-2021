@@ -1,0 +1,9 @@
+.user-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.user-container > div:hover {
+    color: #2E94E3;
+}

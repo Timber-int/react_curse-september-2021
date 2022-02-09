@@ -5,7 +5,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div className='footer'><UserInfo/></div>
+        <div onClick={() => window.scroll(0, 0)} className='footer'><UserInfo/></div>
     );
 };
 
