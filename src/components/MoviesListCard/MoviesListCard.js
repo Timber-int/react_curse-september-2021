@@ -22,6 +22,8 @@ const MoviesListCard = () => {
         original_title,
     } = movie;
 
+    const {budget, runtime, production_countries, genres, imdb_id} = movieDetails;
+
     useEffect(() => {
         movieService.getById(id).then(value => setMovieDetails({...value}));
     }, [id]);
@@ -48,28 +50,29 @@ const MoviesListCard = () => {
                     <div>Language: {original_language}</div>
                     <div>Release date: {release_date}</div>
                     <div>Vote count: {vote_count}</div>
-                    <div>Budget: {movieDetails.budget} $</div>
-                    <div>Runtime: {movieDetails.runtime} min</div>
+                    <div>Budget: {budget} $</div>
+                    <div>Runtime: {runtime} min</div>
                     <div>Country: {
-                        movieDetails.production_countries
+                        production_countries
                             ?
-                            movieDetails.production_countries.map(country => country.name)
+                            production_countries.map(country => country.name)
                             :
                             ''
                     }
                     </div>
                     <div>
                         Genres: {
-                        movieDetails.genres
+                        genres
                             ?
-                            movieDetails.genres.map(genre => `${genre.name}; `)
+                            genres.map(genre => `${genre.name}; `)
                             :
                             ''
                     }
                     </div>
-                    <div>IMDB: {movieDetails.imdb_id
+                    <div>IMDB: {
+                        imdb_id
                         ?
-                        movieDetails.imdb_id
+                        imdb_id
                         :
                         ''
                     }
