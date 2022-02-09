@@ -1,21 +1,13 @@
 import React from 'react';
 
-import {Route, Routes} from 'react-router-dom';
-import {MovieDetailPage, MoviesPage, NotFoundPage} from './pages';
-import {Layout} from './components';
+import {MoviesContainer} from './container';
 import './App.css';
 
 const App = () => {
 
     return (
         <div>
-            <Routes>
-                <Route path={'/'} element={<Layout/>}>
-                    <Route index element={<MoviesPage/>}/>
-                    <Route path={':id'} element={<MovieDetailPage/>}/>
-                </Route>
-                <Route path={'*'} element={<NotFoundPage/>}/>
-            </Routes>
+            <MoviesContainer/>
         </div>
     );
 };

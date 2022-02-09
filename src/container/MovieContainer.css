@@ -1,0 +1,17 @@
+.footer-container{
+    width: 100%;
+    height: 70px;
+    gap: 20px;
+    box-shadow: 0 1px 5px black;
+    text-transform: uppercase;
+    background-color: #39445a;
+    font-family: "Montserrat", sans-serif;
+    font-size: 5vw;
+    text-decoration: none;
+    transition: 0.5s;
+    transition-property: background, box-shadow;
+    margin-top: 20px;
+}
+.footer-container:hover{
+    box-shadow: 0 0 30px #2E94E3;
+}
