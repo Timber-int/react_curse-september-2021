@@ -56,7 +56,7 @@ const genreSlice = createSlice({
         },
         [getAllGenres.fulfilled]: (state, action) => {
             state.status = RESOLVED;
-            state.genres = action.payload.genres;
+            state.genres = state.genres.length ? state.genres : action.payload.genres;
             state.error = null;
         },
         [getAllGenres.rejected]: (state, action) => {
