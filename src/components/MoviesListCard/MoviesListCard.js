@@ -9,6 +9,8 @@ const MoviesListCard = () => {
 
     const [movieDetails, setMovieDetails] = useState({});
 
+    const [video, setVideo] = useState();
+
     const {state: movie} = useLocation();
 
     const {
@@ -26,6 +28,7 @@ const MoviesListCard = () => {
 
     useEffect(() => {
         movieService.getById(id).then(value => setMovieDetails({...value}));
+        movieService.getVideo(id).then(value => setVideo(value.results[0]?.key));
     }, [id]);
 
     return (
@@ -71,13 +74,19 @@ const MoviesListCard = () => {
                     </div>
                     <div>IMDB: {
                         imdb_id
-                        ?
-                        imdb_id
-                        :
-                        ''
+                            ?
+                            imdb_id
+                            :
+                            ''
                     }
                     </div>
                 </div>
+            </div>
+            <div className='movie-video-container'>
+                <iframe title={'video'}
+                        className='movie-video'
+                        src={'https://www.youtube.com/embed/' + video}
+                />
             </div>
         </div>
     );
