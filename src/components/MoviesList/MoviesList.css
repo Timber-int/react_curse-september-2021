@@ -3,10 +3,27 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-.movies-container-custom_pagination{
+
+.movies-container-custom_pagination {
     margin-bottom: 20px;
 }
 
-.movies-genres-list{
+.movies-genres-list {
     margin-top: 10px;
+}
+
+.movies_list-loading {
+    display: flex;
+    justify-content: center;
+    margin: 10% 0 10% 0;
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(8deg) scale(1);
+    }
+    to {
+        transform: rotate(360deg) scale(1.5);
+    }
 }

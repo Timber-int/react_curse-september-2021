@@ -10,3 +10,4 @@ export * from './Genre/Genre';
 export * from './SelectedGenre/SelectedGenre';
 export * from './Footer/Footer';
 export * from './UserInfo/UserInfo';
+export * from './Loader/Loader';

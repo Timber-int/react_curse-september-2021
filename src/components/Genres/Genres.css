@@ -1,7 +1,23 @@
-.genres-container{
+.genres-container {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 5px;
+}
+
+.genres-loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(8deg) scale(1);
+    }
+    to{
+        transform: rotate(360deg) scale(1.5);
+    }
 }

@@ -2,11 +2,12 @@ import React, {useEffect} from 'react';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {useGenres} from '../../hooks';
-import {getAllMovies} from '../../store';
-import {LOADING} from '../../constants';
+import {Loader} from '../Loader/Loader';
 import {Movie} from '../Movie/Movie';
 import {CustomPagination} from '../Pagination/CustomPagination';
 import {Genres} from '../Genres/Genres';
+import {LOADING} from '../../constants';
+import {getAllMovies} from '../../store';
 import './MoviesList.css';
 
 const MoviesList = () => {
@@ -26,12 +27,13 @@ const MoviesList = () => {
 
     return (
         <div>
-            {status === LOADING && <center><h1>Loading...</h1></center>}
-            {errors && <center><h1>{errors}</h1></center>}
 
             <div className='movies-genres-list'>
                 <Genres/>
             </div>
+
+            {status === LOADING && <div className='movies_list-loading'><Loader/></div>}
+            {errors && <center><h1>{errors}</h1></center>}
 
             <div className='movies-container'>
                 {
