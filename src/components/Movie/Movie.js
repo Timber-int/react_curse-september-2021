@@ -27,7 +27,9 @@ const Movie = ({movie}) => {
                     <span className='release-date'>{release_date}</span>
                 </div>
             </NavLink>
+            <div className='movie-card-rating'>
             <Rating vote_average={vote_average} starSize={25}/>
+            </div>
         </div>
     );
 };

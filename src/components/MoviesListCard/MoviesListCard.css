@@ -85,3 +85,46 @@
     width: 100%;
     margin-bottom: 10px;
 }
+
+@media (max-width: 950px) {
+
+    .movie-card_poster {
+        width: 30%;
+        text-align: center;
+    }
+
+    .movie-card_content {
+        width: 50%;
+        margin-left: 10%;
+    }
+
+    .movie-video-container {
+        height: 20%;
+    }
+}
+
+@media (max-width: 825px) {
+    .movie-video-container {
+        display: block;
+    }
+
+    .movie-card_poster {
+        width: 80%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .movie-card_content {
+        width: 90%;
+        align-items: center;
+        margin: 10px
+
+    }
+
+    .movie-video-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 20%;
+    }
+}

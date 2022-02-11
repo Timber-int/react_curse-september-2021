@@ -16,7 +16,21 @@
     transition: 0.5s;
     transition-property: background, box-shadow;
 }
-.header:hover{
+
+.header:hover {
     box-shadow: 0 0 30px #2E94E3;
     color: #2E94E3;
 }
+
+@media (max-width: 1000px) {
+    .header {
+        height: 8%;
+        font-size: 30px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
+
