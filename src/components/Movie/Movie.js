@@ -7,6 +7,7 @@ import {img_300, unavailable} from '../../constants';
 import './Movie.css';
 
 const Movie = ({movie}) => {
+
     const {
         id,
         poster_path,
