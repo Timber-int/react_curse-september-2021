@@ -11,3 +11,4 @@ export * from './SelectedGenre/SelectedGenre';
 export * from './Footer/Footer';
 export * from './UserInfo/UserInfo';
 export * from './Loader/Loader';
+export * from './ThemeSpan/ThemeSpan';

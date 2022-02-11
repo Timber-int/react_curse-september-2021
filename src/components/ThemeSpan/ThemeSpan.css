@@ -1,0 +1,16 @@
+.theme-button, .theme-button_dark-mode {
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px 5px 90%;
+    position: fixed;
+    z-index: 100;
+    font-size: 4vw;
+}
+
+@media (max-width: 850px),(max-width: 780px),(max-width: 550px),(max-width: 400px) {
+    .theme-button, .theme-button_dark-mode {
+        font-size: 6vh;
+        margin: 0 5px 5px 85%;
+    }
+}
