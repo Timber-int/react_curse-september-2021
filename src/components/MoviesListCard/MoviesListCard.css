@@ -21,7 +21,7 @@
     border-radius: 5px;
 }
 
-.movie-card_overview {
+.movie-card_overview, .movie-card_overview_dark-mode {
     margin-top: 10px;
     font-family: "Montserrat", sans-serif;
     display: flex;
@@ -36,6 +36,10 @@
     color: #ffffff;
 }
 
+.movie-card_overview_dark-mode {
+    box-shadow: inset 0 0 5px #64dd17;
+}
+
 .movie-card_overview-title {
     text-align: center;
     width: 100%;
@@ -43,7 +47,7 @@
     font-weight: bold;
 }
 
-.movie-card_information-content {
+.movie-card_information-content, .movie-card_information-content_dark-mode {
     font-family: "Montserrat", sans-serif;
     box-shadow: inset 0 0 5px #2E94E3;
     width: 100%;
@@ -54,7 +58,11 @@
     border-radius: 20px;
 }
 
-.movie-card_information-content > div {
+.movie-card_information-content_dark-mode {
+    box-shadow: inset 0 0 5px #64dd17;
+}
+
+.movie-card_information-content > div, .movie-card_information-content_dark-mode > div {
     padding: 5px;
     width: 45%;
     font-size: 16px;

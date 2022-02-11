@@ -1,6 +1,10 @@
-.loading-content {
+.loading-content, .loading-content_dark-mode {
     width: 100px;
     height: 100px;
     border-radius: 60%;
     border: 3px dashed #2E94E3;
+}
+
+.loading-content_dark-mode {
+    border: 3px dashed #64dd17;
 }

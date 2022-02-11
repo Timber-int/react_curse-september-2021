@@ -1,4 +1,4 @@
-.header {
+.header, .header_dark-mode {
     width: 100%;
     cursor: pointer;
     position: fixed;
@@ -17,13 +17,32 @@
     transition-property: background, box-shadow;
 }
 
+.header_dark-mode {
+    background-color: #212121;
+}
+
+.header_dark-mode:hover {
+    box-shadow: 0 0 30px #64dd17;
+    color: #64dd17;
+}
+
 .header:hover {
     box-shadow: 0 0 30px #2E94E3;
     color: #2E94E3;
 }
 
+.theme-button, .theme-button_dark-mode {
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px 5px 90%;
+    position: fixed;
+    z-index: 100;
+    font-size: 4vw;
+}
+
 @media (max-width: 1000px) {
-    .header {
+    .header, .header_dark-mode {
         height: 8%;
         font-size: 30px;
         cursor: pointer;
@@ -33,4 +52,13 @@
         margin-bottom: 10px;
     }
 }
+
+@media (max-width: 850px),(max-width: 780px),(max-width: 550px),(max-width: 400px) {
+    .theme-button, .theme-button_dark-mode {
+        font-size: 6vh;
+        margin: 0 5px 5px 85%;
+    }
+}
+
+
 

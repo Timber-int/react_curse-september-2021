@@ -1,11 +1,14 @@
 import React, {useEffect, useState} from 'react';
 
 import {Link, useLocation} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 import {img_500, unavailable} from '../../constants';
 import {movieService} from '../../services';
 import './MoviesListCard.css';
 
 const MoviesListCard = () => {
+
+    const {theme} = useSelector(state => state['themeReducer']);
 
     const [movieDetails, setMovieDetails] = useState({});
 
@@ -46,10 +49,17 @@ const MoviesListCard = () => {
             </div>
             <div className='movie-card_content'>
                 <div className='movie-card_original-title'>{original_title}</div>
-                <div className='movie-card_overview'>
+                <div className={theme === true ? 'movie-card_overview' : 'movie-card_overview_dark-mode'}>
                     {overview}
                 </div>
-                <div className='movie-card_information-content'>
+                <div
+                    className={
+                        theme === true
+                            ?
+                            'movie-card_information-content'
+                            :
+                            'movie-card_information-content_dark-mode'
+                    }>
                     <div>Language: {original_language}</div>
                     <div>Release date: {release_date}</div>
                     <div>Vote count: {vote_count}</div>
