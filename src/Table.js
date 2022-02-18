@@ -6,7 +6,7 @@ const Table = ({data}) => {
             <tbody>
             <tr>
                 <th>Name</th>
-                <th>Surname</th>
+                <th>Last name</th>
                 <th>Email</th>
             </tr>
             {
