@@ -1,11 +1,8 @@
 import React from 'react';
+import {PhotosController} from "./controller";
 
 const App = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+    return <PhotosController/>;
 };
 
 export {App};
